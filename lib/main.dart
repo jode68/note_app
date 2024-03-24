@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controllers/note_controller.dart';
 import 'package:note_app/views/home_page.dart';
@@ -6,7 +7,11 @@ import 'package:note_app/views/home_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(MainController());
-  runApp(const MainApp());
+  runApp(
+    DevicePreview(
+      builder: (context) => const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends GetView<MainController> {
